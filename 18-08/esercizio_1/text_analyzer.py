@@ -10,17 +10,19 @@ def open_file(file_path):
     except Exception as e:
         return "Errore: " + str(e)
 
-# funzione conteggio righe
+#  conteggio righe
 
 def conta_righe(testo):
     righe = testo.split('\n')
     return len(righe)
 
-# funzione conteggio parole
+#  conteggio parole
 
 def conta_parole(testo):
     parole = testo.split()
     return len(parole)
+
+# rimozione punteggiatura e maiuscole
 
 def rimuovi_punteggiatura(testo):
     testo = testo.replace(".", "").replace(",", "").replace("!", "").replace("?", "")
@@ -28,6 +30,8 @@ def rimuovi_punteggiatura(testo):
 
 def rimuovi_upper_testo(testo):
     return testo.lower()
+
+# trova le 5 parole più frequenti
 
 def trova_top_5_parole(testo):
     testo = rimuovi_punteggiatura(testo)
@@ -39,6 +43,7 @@ def trova_top_5_parole(testo):
     top_5 = sorted(conteggio.items(), key=lambda x: x[1], reverse=True)[:5]
     return [f"{parola}: {conteggio}" for parola, conteggio in top_5]
 
+# analizza il testo
 
 def analizza_testo(file_path):
     testo = open_file(file_path)

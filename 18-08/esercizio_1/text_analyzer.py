@@ -1,3 +1,4 @@
+import string
 # apri file di test
 
 def open_file(file_path):
@@ -24,9 +25,9 @@ def conta_parole(testo):
 
 # rimozione punteggiatura e maiuscole
 
+
 def rimuovi_punteggiatura(testo):
-    testo = testo.replace(".", "").replace(",", "").replace("!", "").replace("?", "")
-    return testo
+    return testo.translate(str.maketrans('', '', string.punctuation))
 
 def rimuovi_upper_testo(testo):
     return testo.lower()

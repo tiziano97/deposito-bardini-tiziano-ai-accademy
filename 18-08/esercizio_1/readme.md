@@ -1,0 +1,1 @@
+text_analyzer analizza un testo chiamato input.txt collocato nella directory esercizio_1

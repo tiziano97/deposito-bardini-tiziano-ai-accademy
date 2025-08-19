@@ -3,6 +3,20 @@ from classificatore.unzip_file import unzip_file
 import os
 
 def main():
+    """
+    Esegue il processo di estrazione, lettura e classificazione dei dati di consumo.
+
+    Step
+    ----
+    1. Estrae i file dallo zip 'archive.zip' nella cartella 'dataset'.
+    2. Legge il file CSV 'dataset/COMED_hourly.csv' e lo carica in un DataFrame.
+    3. Classifica ogni ora come 'alto consumo' o 'basso consumo' rispetto alla media giornaliera, settimanale e globale.
+    4. Salva il DataFrame classificato in 'classificato.csv'.
+
+    Returns
+    -------
+    None
+    """
     zip_path = 'archive.zip'
     extract_to = 'dataset'
     if not os.path.exists(extract_to):
